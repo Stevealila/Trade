@@ -70,6 +70,7 @@ def create_dataframe(currency_pair, timeframe, years_back=3):
         df = pd.DataFrame(rates)
         df['time'] = pd.to_datetime(df['time'], unit='s')
         df = df.set_index('time')
+        # df.index = pd.DatetimeIndex(df.index).to_period('h')
         df.drop('real_volume', axis=1, inplace=True)
         return df
     else:
