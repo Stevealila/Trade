@@ -1,3 +1,7 @@
+def mt5_initialize():
+    import MetaTrader5 as mt5
+    mt5.initialize()
+
 
 
 def mt5_login():
@@ -19,7 +23,7 @@ def mt5_login():
 
 
 
-def create_dataframe(currency_pair, timeframe, years_back=1):
+def get_currency_pair_data(currency_pair, timeframe='D1', years_back=3):
     import MetaTrader5 as mt5
     import pytz
     from datetime import datetime
@@ -68,7 +72,6 @@ def create_dataframe(currency_pair, timeframe, years_back=1):
         df = pd.DataFrame(rates)
         df['time'] = pd.to_datetime(df['time'], unit='s')
         df = df.set_index('time')
-        # df.index = pd.DatetimeIndex(df.index).to_period('h')
         df.drop('real_volume', axis=1, inplace=True)
         return df
     else:

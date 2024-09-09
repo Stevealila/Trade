@@ -22,7 +22,7 @@
 
 
 
-## Commodities vs Currencies 
+## Effects of Commodities
 
 ### Gold
 
