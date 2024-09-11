@@ -1,10 +1,12 @@
-def mt5_initialize():
+
+def initialize_():
     import MetaTrader5 as mt5
     mt5.initialize()
 
 
 
-def mt5_login():
+
+def login_():
     import MetaTrader5 as mt5
     from dotenv import load_dotenv 
     import os
@@ -23,7 +25,7 @@ def mt5_login():
 
 
 
-def get_currency_pair_data(currency_pair, timeframe='D1', years_back=3):
+def get_currency_pair_data_(currency_pair, timeframe='D1', years_back=3):
     import MetaTrader5 as mt5
     import pytz
     from datetime import datetime
