@@ -17,6 +17,7 @@ def login_():
     EXNESS_SERVER = os.getenv("EXNESS_SERVER")
     EXNESS_MT5_LOGIN = os.getenv("EXNESS_MT5_LOGIN")
     try:
+        initialize_()
         mt5.login(login=int(EXNESS_MT5_LOGIN), password=EXNESS_PASSWORD, server=EXNESS_SERVER)
         print("Connected to MetaTrader5 successfully!")
     except:
