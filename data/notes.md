@@ -33,3 +33,101 @@
 
 * **USD/CAD:** Negative
 * **CAD/JPY:** Positive
+
+---
+
+
+
+## 3 Kinds of Market Trends
+
+#1 Primary trend
+
+- lasts more than 1 year. 
+- longest
+- most predominant trends
+
+#2 Secondary
+
+- Last few weeks
+- Corrections of the primary trend
+- A good opportunity to open poisitions against primary trend
+
+#3 Minor trend
+
+- Last less than one month
+- Offer opportunities for short-term traders
+
+The most effective method to identify trends is to draw an accurate trendline.
+
+---
+
+
+
+## Predicting Reversals
+
+#1 Shortening Length between touches
+
+![shortening_length_btn_touches.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/shortening_length_btn_touches.jpg)
+
+#2 Breakout-retest-reversal
+
+![breakout_retest_reversal.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/breakout_retest_reversal.jpg)
+
+---
+
+### Support Resistance (S/R) Levels 
+
+Price areas at which buying and selling pressures are strong enough to prevent the price from moving further.
+
+#### 3 Types of S/R levels
+
+#1 Horizontal S/R Level:
+
+![horizontal_sr_levels.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/horizontal_sr_levels.jpg)
+
+#2 Psychological S/R Level:
+
+![psychological_sr_level.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/psychological_sr_level.jpg)
+
+#3 Trendline S/R Levels:
+
+![trendline_sr_levels.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/trendline_sr_levels.jpg)
+
+---
+
+
+
+## 3 Steps to find Perfect S/R Level
+
+#1 Find the area, not the line
+
+![perfect_sr_level.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/perfect_sr_level.jpg)
+
+#2 Consider bigger timeframes
+
+![consider_bigger_timeframes.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/consider_bigger_timeframes.jpg)
+
+#3 Consider at least 3 reversals
+
+![consider_3_reversals.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/consider_3_reversals.jpg)
+
+#### *Look for the "Flip" if the level breaks*
+
+![look_for_the_flip.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/look_for_the_flip.jpg)
+
+---
+
+## 3 Common Reversal Patterns
+
+#1 Straight/inverted Heads and Shoulders
+
+#2 Rising/Falling Wedges
+
+![head_shoulder_wedges.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/head_shoulder_wedges.jpg)
+
+#3 Double Top/Bottom
+
+![double_top_bottom.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/double_top_bottom.jpg?raw=true)
+
+
+
