@@ -127,7 +127,48 @@ Price areas at which buying and selling pressures are strong enough to prevent t
 
 #3 Double Top/Bottom
 
-![double_top_bottom.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/double_top_bottom.jpg?raw=true)
+![double_top_bottom.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/double_top_bottom.jpg)
 
+---
 
+## Buying - Identify trend
 
+### Step1: Choose timeframe
+
+![buying_1_timeframe_n_trend.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_1_timeframe_n_trend.jpg)
+
+### Step2: Identify market level
+
+![buying_2_market_levels.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_2_market_levels.jpg)
+
+### Step3: Identify chart patterns
+
+![buying_3_chart_pattern.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_3_chart_pattern.jpg)
+
+![buying_3_1_chart_pattern.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_3_1_chart_pattern.jpg)
+
+![buying_3_2_chart_pattern.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_3_2_chart_pattern.jpg)
+
+![buying_3_3_chart_pattern.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_3_3_chart_pattern.jpg)
+
+### Step4: Look at technical indicators
+
+![buying_4_indicators.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_4_indicators.jpg)
+
+![buying_4_1_indicators.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_4_1_indicators.jpg)
+
+![buying_4_2_indicators.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_4_2_indicators.jpg)
+
+![buying_4_3_indicators.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_4_3_indicators.jpg)
+
+### Step5: Confirm with volume indicators
+
+![buying_5_confirm_with_volume_indicators.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_5_confirm_with_volume_indicators.jpg)
+
+![buying_5_1_confirm_with_volume_indicators.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_5_1_confirm_with_volume_indicators.jpg)
+
+![buying_5_2_confirm_with_volume_indicators.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_5_2_confirm_with_volume_indicators.jpg)
+
+### Step6: Manage risk
+
+![buying_6_manage_risk.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_6_manage_risk.jpg)
