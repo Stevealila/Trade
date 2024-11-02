@@ -1,4 +1,8 @@
-## Majors
+## Currency pairs
+
+---
+
+### Majors
 
 1. EURUSD
 2. GBPUSD 
@@ -9,7 +13,9 @@
 7. AUDUSD 
 8. NZDUSD
 
-## Crosses
+---
+
+### Crosses
 
 1. GBPJPY
 2. EURGBP
@@ -20,9 +26,7 @@
 
 ---
 
-
-
-## Effects of Commodities
+### Effects of Commodities on currency pairs
 
 ### Gold
 
@@ -38,7 +42,15 @@
 
 
 
-## 3 Kinds of Market Trends
+## Buying 
+
+---
+
+### Step1: Choose timeframe n trendline
+
+![buying_1_timeframe_n_trend.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_1_timeframe_n_trend.jpg)
+
+#### 3 Kinds of Market Trends
 
 #1 Primary trend
 
@@ -61,25 +73,15 @@ The most effective method to identify trends is to draw an accurate trendline.
 
 ---
 
+### Step2: Identify market level
 
+![buying_2_market_levels.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_2_market_levels.jpg)
 
-## Predicting Reversals
-
-#1 Shortening Length between touches
-
-![shortening_length_btn_touches.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/shortening_length_btn_touches.jpg)
-
-#2 Breakout-retest-reversal
-
-![breakout_retest_reversal.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/breakout_retest_reversal.jpg)
-
----
-
-### Support Resistance (S/R) Levels 
+#### Support Resistance (S/R) Levels 
 
 Price areas at which buying and selling pressures are strong enough to prevent the price from moving further.
 
-#### 3 Types of S/R levels
+##### Types of S/R levels
 
 #1 Horizontal S/R Level:
 
@@ -93,11 +95,7 @@ Price areas at which buying and selling pressures are strong enough to prevent t
 
 ![trendline_sr_levels.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/trendline_sr_levels.jpg)
 
----
-
-
-
-## 3 Steps to find Perfect S/R Level
+##### Steps to find Perfect S/R Level
 
 #1 Find the area, not the line
 
@@ -111,35 +109,31 @@ Price areas at which buying and selling pressures are strong enough to prevent t
 
 ![consider_3_reversals.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/consider_3_reversals.jpg)
 
-#### *Look for the "Flip" if the level breaks*
+*Look for the "Flip" if the level breaks*
 
 ![look_for_the_flip.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/look_for_the_flip.jpg)
 
----
+##### Predicting Reversals
 
-## 3 Common Reversal Patterns
+#1 Shortening Length between touches
 
-#1 Straight/inverted Heads and Shoulders
+![shortening_length_btn_touches.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/shortening_length_btn_touches.jpg)
 
-#2 Rising/Falling Wedges
+#2 Breakout-retest-reversal
+
+![breakout_retest_reversal.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/breakout_retest_reversal.jpg)
+
+###### Common Reversal Patterns
+
+#1 Rising/Falling Wedges
 
 ![head_shoulder_wedges.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/head_shoulder_wedges.jpg)
 
-#3 Double Top/Bottom
+#2 Double Top/Bottom
 
 ![double_top_bottom.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/double_top_bottom.jpg)
 
 ---
-
-## Buying - Identify trend
-
-### Step1: Choose timeframe
-
-![buying_1_timeframe_n_trend.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_1_timeframe_n_trend.jpg)
-
-### Step2: Identify market level
-
-![buying_2_market_levels.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_2_market_levels.jpg)
 
 ### Step3: Identify chart patterns
 
@@ -151,6 +145,8 @@ Price areas at which buying and selling pressures are strong enough to prevent t
 
 ![buying_3_3_chart_pattern.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_3_3_chart_pattern.jpg)
 
+---
+
 ### Step4: Look at technical indicators
 
 ![buying_4_indicators.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_4_indicators.jpg)
@@ -161,7 +157,9 @@ Price areas at which buying and selling pressures are strong enough to prevent t
 
 ![buying_4_3_indicators.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_4_3_indicators.jpg)
 
-### Step5: Confirm with volume indicators
+---
+
+### Step5: Confirm trend with volume indicators
 
 ![buying_5_confirm_with_volume_indicators.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_5_confirm_with_volume_indicators.jpg)
 
@@ -169,6 +167,9 @@ Price areas at which buying and selling pressures are strong enough to prevent t
 
 ![buying_5_2_confirm_with_volume_indicators.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_5_2_confirm_with_volume_indicators.jpg)
 
+---
+
 ### Step6: Manage risk
 
 ![buying_6_manage_risk.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_6_manage_risk.jpg)
+
