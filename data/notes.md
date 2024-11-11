@@ -26,27 +26,13 @@
 
 ---
 
-### Effects of Commodities on currency pairs
-
-### Gold
-
-* **AUD/USD:** Positive
-* **USD/CHF:** Negative
-
-### Crude Oil
-
-* **USD/CAD:** Negative
-* **CAD/JPY:** Positive
-
----
-
 
 
 ## Buying 
 
 ---
 
-### Step1: Choose timeframe n trendline
+### (Buying) Step1: Choose timeframe n trendline
 
 ![buying_1_timeframe_n_trend.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_1_timeframe_n_trend.jpg)
 
@@ -73,7 +59,7 @@ The most effective method to identify trends is to draw an accurate trendline.
 
 ---
 
-### Step2: Identify market level
+### (Buying) Step2: Identify market level
 
 ![buying_2_market_levels.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_2_market_levels.jpg)
 
@@ -135,7 +121,7 @@ Price areas at which buying and selling pressures are strong enough to prevent t
 
 ---
 
-### Step3: Identify chart patterns
+### (Buying) Step3: Identify chart patterns
 
 ![buying_3_chart_pattern.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_3_chart_pattern.jpg)
 
@@ -147,7 +133,7 @@ Price areas at which buying and selling pressures are strong enough to prevent t
 
 ---
 
-### Step4: Look at technical indicators
+### (Buying) Step4: Look at technical indicators
 
 ![buying_4_indicators.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_4_indicators.jpg)
 
@@ -159,7 +145,7 @@ Price areas at which buying and selling pressures are strong enough to prevent t
 
 ---
 
-### Step5: Confirm trend with volume indicators
+### (Buying) Step5: Confirm trend with volume indicators
 
 ![buying_5_confirm_with_volume_indicators.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_5_confirm_with_volume_indicators.jpg)
 
@@ -169,7 +155,7 @@ Price areas at which buying and selling pressures are strong enough to prevent t
 
 ---
 
-### Step6: Manage risk
+### (Buying) Step6: Manage risk
 
 ![buying_6_manage_risk.jpg](https://github.com/Stevealila/trade/blob/main/data/screenshots/buying_6_manage_risk.jpg)
 
