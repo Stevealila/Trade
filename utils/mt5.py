@@ -27,6 +27,7 @@ def login_():
 
 
 def get_currency_pair_data_(currency_pair, timeframe='D1', years_back=3):
+    
     import MetaTrader5 as mt5
     import pytz
     from datetime import datetime
@@ -79,3 +80,86 @@ def get_currency_pair_data_(currency_pair, timeframe='D1', years_back=3):
         return df
     else:
         print("NO rates found!")
+
+
+
+
+
+
+def place_buy_order(symbol, lot_size, stop_loss=None, take_profit=None):
+    
+    import MetaTrader5 as mt5
+    
+    price = mt5.symbol_info_tick(symbol).ask
+    
+    request = {
+        "action": mt5.TRADE_ACTION_DEAL,
+        "symbol": symbol,
+        "volume": lot_size,
+        "type": mt5.ORDER_TYPE_BUY,
+        "price": price,
+        "sl": stop_loss,
+        "tp": take_profit,
+        "deviation": 10,  # Maximum deviation in points
+        "magic": 234000,  # Arbitrary ID for identification
+        "comment": "Buy order",
+        "type_time": mt5.ORDER_TIME_GTC,  # Good till canceled
+        "type_filling": mt5.ORDER_FILLING_IOC,
+    }
+
+    result = mt5.order_send(request)
+    if result.retcode != mt5.TRADE_RETCODE_DONE:
+        raise Exception(f"Buy order failed: {result.retcode} {result.comment}")
+    print(f"Buy order placed successfully: {result}")
+    return result
+
+
+
+
+def place_sell_order(symbol, lot_size, stop_loss=None, take_profit=None):
+    
+    import MetaTrader5 as mt5
+
+    price = mt5.symbol_info_tick(symbol).bid
+    
+    request = {
+        "action": mt5.TRADE_ACTION_DEAL,
+        "symbol": symbol,
+        "volume": lot_size,
+        "type": mt5.ORDER_TYPE_SELL,
+        "price": price,
+        "sl": stop_loss,
+        "tp": take_profit,
+        "deviation": 10,  # Maximum deviation in points
+        "magic": 234000,  # Arbitrary ID for identification
+        "comment": "Sell order",
+        "type_time": mt5.ORDER_TIME_GTC,  # Good till canceled
+        "type_filling": mt5.ORDER_FILLING_IOC,
+    }
+
+    result = mt5.order_send(request)
+    if result.retcode != mt5.TRADE_RETCODE_DONE:
+        raise Exception(f"Sell order failed: {result.retcode} {result.comment}")
+    print(f"Sell order placed successfully: {result}")
+    return result
+
+
+
+
+def stop_loss_take_profit(order_id, symbol, stop_loss=None, take_profit=None):
+    
+    import MetaTrader5 as mt5
+
+    request = {
+        "action": mt5.TRADE_ACTION_SLTP,
+        "symbol": symbol,
+        "position": order_id,
+        "sl": stop_loss,
+        "tp": take_profit,
+    }
+
+    result = mt5.order_send(request)
+    if result.retcode != mt5.TRADE_RETCODE_DONE:
+        raise Exception(f"Failed to modify order: {result.retcode} {result.comment}")
+    print(f"Order modified successfully: {result}")
+    return result
