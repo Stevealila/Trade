@@ -1,0 +1,7 @@
+https://www.kaggle.com/c/walmart-recruiting-store-sales-forecasting/discussion/8125
+
+https://www.kaggle.com/c/rossmann-store-sales/discussion/17896
+
+https://www.kaggle.com/c/web-traffic-time-series-forecasting/discussion/39395
+
+https://github.com/Mcompetitions/M4-methods/blob/slaweks_ES-RNN/118%20-%20slaweks17/ES_RNN_SlawekSmyl.pdf
