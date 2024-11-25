@@ -1,31 +1,3 @@
-
-def initialize_():
-    import MetaTrader5 as mt5
-    mt5.initialize()
-
-
-
-
-def login_():
-    import MetaTrader5 as mt5
-    from dotenv import load_dotenv 
-    import os
-
-    load_dotenv()
-
-    EXNESS_PASSWORD = os.getenv("EXNESS_PASSWORD")
-    EXNESS_SERVER = os.getenv("EXNESS_SERVER")
-    EXNESS_MT5_LOGIN = os.getenv("EXNESS_MT5_LOGIN")
-    try:
-        initialize_()
-        mt5.login(login=int(EXNESS_MT5_LOGIN), password=EXNESS_PASSWORD, server=EXNESS_SERVER)
-        print("Connected to MetaTrader5 successfully!")
-    except:
-        print("Failed to connect to MetaTrader5.")
-
-
-
-
 def get_currency_pair_data_(currency_pair, timeframe='D1', period='D', years_back=3):
     
     import MetaTrader5 as mt5
@@ -81,44 +53,3 @@ def get_currency_pair_data_(currency_pair, timeframe='D1', period='D', years_bac
         return df
     else:
         print("NO rates found!")
-
-
-
-
-def place_buy_order(currency, stop_loss_ratio=1, take_profit_ratio=5):
-    import MetaTrader5 as mt5
-
-    symbol = currency.upper() + "m"
-    price = mt5.symbol_info_tick(symbol).ask
-
-    stop_loss_ratio, take_profit_ratio = 1, 5
-
-    stop_loss_distance = price * (stop_loss_ratio / 100)
-    take_profit_distance = stop_loss_distance * take_profit_ratio
-
-    stop_loss, take_profit = price-stop_loss_distance, price+take_profit_distance
-
-    # Prepare order request
-    request = {
-        "action": mt5.TRADE_ACTION_DEAL,
-        "symbol": symbol,
-        "volume": 0.01,
-        "type": mt5.ORDER_TYPE_BUY,
-        "price": price,
-        "sl": stop_loss,
-        "tp": take_profit,
-        "deviation": 10,  # Maximum deviation in points
-        "magic": 234000,  # Arbitrary ID for identification
-        "comment": "Automated Buy Order",
-        "type_time": mt5.ORDER_TIME_GTC,  # Good till canceled
-        "type_filling": mt5.ORDER_FILLING_IOC,
-    }
-
-    # Send the order
-    result = mt5.order_send(request)
-    if result.retcode != mt5.TRADE_RETCODE_DONE:
-        raise Exception(f"Buy order failed: {result.retcode} {result.comment}")
-    
-    print(f"Buy order placed successfully: {result}")
-    
-    return result
