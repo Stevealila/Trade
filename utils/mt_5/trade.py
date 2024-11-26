@@ -1,6 +1,49 @@
+def sell(symbol):
+    import MetaTrader5 as mt5
+    from utils.mt_5.login import login_
+    
+    login_()
+
+    symbol += "m"
+    position_id = ""
+
+    for position in mt5.positions_get():
+        if position.symbol == symbol:
+            position_id = position.ticket
+
+    lot = 0.01
+    price = mt5.symbol_info_tick(symbol).bid
+
+    deviation = 20
+    request = {
+        "action": mt5.TRADE_ACTION_DEAL,
+        "symbol": symbol,
+        "volume": lot,
+        "type": mt5.ORDER_TYPE_SELL,
+        "price": price,
+        "deviation": deviation,
+        "comment": "python script close",
+        "type_time": mt5.ORDER_TIME_GTC,
+        "type_filling": mt5.ORDER_FILLING_IOC,
+        "position": position_id,
+    }
+    
+    # send a trading request
+    result = mt5.order_send(request)
+
+    if result.retcode != mt5.TRADE_RETCODE_DONE:
+        print(f"Cannot sell {symbol} of {lot} lots at {price} because of '{result.comment}'")
+    else:
+        print(f"{symbol} sold successfully!")
+
+    mt5.shutdown()
+
+
+
+
 def buy(symbol, target_profit=20, max_loss=5):
     import MetaTrader5 as mt5
-    from utils.mt5.login import login_
+    from utils.mt_5.login import login_
     
     login_()
 
