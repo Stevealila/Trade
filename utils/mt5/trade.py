@@ -1,4 +1,4 @@
-def buy(symbol, target_profit=10, max_loss=3):
+def buy(symbol, target_profit=20, max_loss=5):
     import MetaTrader5 as mt5
     from utils.mt5.login import login_
     
