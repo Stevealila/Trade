@@ -8,7 +8,7 @@ def get_currency_pair_data_(
     import pytz
     from datetime import datetime
     import pandas as pd
-    from utils.mt5.login import login_
+    from utils.mt_5.login import login_
 
     login_()
 
