@@ -1,12 +1,12 @@
 def get_currency_pair_data_(
     currency_pair, 
     timeframe='D1', 
-    years_back=3, 
-    timezone="Africa/Nairobi"
+    years_back=3
 ):    
     import MetaTrader5 as mt5
     import pytz
     from datetime import datetime
+    import tzlocal
     import pandas as pd
     from utils.mt_5.login import login_
 
@@ -52,16 +52,22 @@ def get_currency_pair_data_(
     rates = mt5.copy_rates_from(
         currency_pair.upper() + "m", 
         mt5_timeframe, 
-        datetime.now(pytz.timezone(timezone)), 
+        datetime.now(pytz.timezone(str(tzlocal.get_localzone()))), 
         bars
     )
     if rates is not None and len(rates):  
         df = pd.DataFrame(rates)
         df['time'] = pd.to_datetime(df['time'], unit='s')
         df = df.set_index('time')
+
+        # Convert the index to the local timezone
+        local_timezone = pytz.timezone(str(tzlocal.get_localzone()))
+        df.index = df.index.tz_localize(pytz.UTC).tz_convert(local_timezone)
+        df.index = df.index.tz_localize(None) # strip timezone info
+        
+        # Drop unnecessary columns and keep only 'close'
         df = df.drop('real_volume', axis=1)
         df = df[['close']]
-        # df = df.to_period(period)
         return df
     else:
         print("No rates found!")
