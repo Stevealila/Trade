@@ -44,6 +44,7 @@ def sell(symbol):
 def buy(symbol, target_profit=10, max_loss=3):
     import MetaTrader5 as mt5
     from utils.mt_5.login import login_
+    from utils.mt_5.calculate_price_levels import calculate_sl_tp
     
     login_()
 
@@ -65,25 +66,13 @@ def buy(symbol, target_profit=10, max_loss=3):
 
     lot = 0.01  # Standard lot size
     price = mt5.symbol_info_tick(symbol).ask
+    take_profit, stop_loss = calculate_sl_tp(
+        symbol=symbol, 
+        lot=lot, 
+        target_profit=target_profit, 
+        max_loss=max_loss, 
+        price=price)
     
-    # Calculate pip value based on symbol
-    if "JPY" in symbol:
-        pip_value = lot * 100000 * 0.01  
-
-        pips_for_target = abs(target_profit / pip_value)
-        pips_for_loss = abs(max_loss / pip_value)
-
-        take_profit = price + pips_for_target
-        stop_loss = price - pips_for_loss
-    else:
-        pip_value = lot * 100000 * 0.0001  
-
-        pips_for_target = abs(target_profit / pip_value)
-        pips_for_loss = abs(max_loss / pip_value)
-
-        take_profit = price + pips_for_target * 0.0001  
-        stop_loss = price - pips_for_loss * 0.0001
-
     deviation = 20
     request = {
         "action": mt5.TRADE_ACTION_DEAL,
