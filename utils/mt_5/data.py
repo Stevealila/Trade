@@ -1,3 +1,5 @@
+
+
 def get_currency_pair_data_(
     currency_pair, 
     timeframe='D1', 

@@ -2,7 +2,7 @@ def daily(currency: str, years_back=1):
     """
     Models average rises and falls per day using mt5's `D1` timeframe.
     Days are sorted from Mon-Fri.
-    The idea is to help you choose the best day to trade the given `currency`. 
+    The idea is to help you choose a suitable day to trade the given `currency`. 
     """
     import pandas as pd 
     import seaborn as sns
