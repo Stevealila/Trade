@@ -1,5 +1,3 @@
-#................. Multi-step serial forecasting................
-
 def make_lags(ts, lags, lead_time=1): # => X
     import pandas as pd 
 
@@ -11,7 +9,8 @@ def make_lags(ts, lags, lead_time=1): # => X
         axis=1).fillna(0.0)
 
 
-def make_multistep_target(ts, steps): # => y
+
+def make_multistep_targets(ts, steps): # => y
     import pandas as pd 
 
     return pd.concat(
@@ -20,8 +19,6 @@ def make_multistep_target(ts, steps): # => y
         axis=1).dropna()
 
 
-
-#................. Model long-term seasonality................
 
 def plot_periodogram(ts, detrend='linear', ax=None):
     import pandas as pd

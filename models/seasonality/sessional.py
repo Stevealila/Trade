@@ -1,4 +1,4 @@
-def hourly(currency: str, years_back=.75):
+def hourly(currency: str, years_back=.5):
     """
     Models average rises and falls per trading session using mt5's `H1` timeframe.
     The idea is to help you choose a suitable `session` to trade the given `currency`. 
@@ -15,7 +15,7 @@ def hourly(currency: str, years_back=.75):
     )
 
     # Add `session` column
-    session_order = ["Tokyo(0300-1100)", "London(1100-1700)", "New_York(1700-2200)", "Sydney(2200-0300)"]
+    session_order = ["Tokyo(0300)", "London(1100)", "New_York(1700)", "Sydney(2200)"]
     def create_sessional_df(df):
         def get_trading_session(hour):
             if 3 <= hour < 11:
@@ -35,14 +35,15 @@ def hourly(currency: str, years_back=.75):
     df['session'] = pd.Categorical(df['session'], categories=session_order, ordered=True)
 
     # Ensure equal samples for each session
-    min_samples = df['session'].value_counts().min()  # Determine the smallest session size
+    min_samples = df['session'].value_counts().min()  
     df_balanced = (
-        df.groupby('session', group_keys=False, observed=True)  # Group by session
-          .apply(lambda group: group.iloc[:min_samples])  # Take equal samples without disrupting order
-    )
+        df.groupby('session', group_keys=False, observed=True)
+        .apply(lambda group: group.iloc[:min_samples])
+        )
+    
 
     # Plot session-wise average close prices
-    sns.set(style="whitegrid")
+    sns.set_style('whitegrid')
     plot = sns.lineplot(
         data=df_balanced,
         x="session",
