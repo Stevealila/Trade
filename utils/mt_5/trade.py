@@ -13,6 +13,10 @@ def sell(symbol):
     for position in mt5.positions_get():
         if position.symbol == symbol:
             position_id = position.ticket
+    
+    if not position_id:
+        print(f"LOGICAL ERROR: {symbol} N-O-T yet b-o-u-g-h-t!")
+        return
 
     lot = 0.01
     price = mt5.symbol_info_tick(symbol).bid
@@ -123,6 +127,14 @@ def short_sell(symbol, target_profit=10, max_loss=3):
 
     symbol += "m"
     symbol_info = mt5.symbol_info(symbol)
+
+    for position in mt5.positions_get():
+        if position.symbol == symbol:
+            position_id = position.ticket
+
+    if position_id:
+        print(f"{symbol} already short-sold!")
+        return
     
     if symbol_info is None:
         print(symbol, "not found, can not call order_check()")
