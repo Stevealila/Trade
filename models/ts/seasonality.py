@@ -1,5 +1,5 @@
 
-def hourly(currency: str, years_back=1.25):
+def hourly(currency: str, years_back=1):
     """
     Models average rises and falls per trading hour using mt5's `H1` timeframe.
     """
@@ -38,7 +38,7 @@ def hourly(currency: str, years_back=1.25):
 
 
 
-def sessional(currency: str, years_back=1.25):
+def sessional(currency: str, years_back=1):
     """
     Models average rises and falls per trading session using mt5's `H3` timeframe.
     """
@@ -101,7 +101,7 @@ def sessional(currency: str, years_back=1.25):
 
 
 
-def daily(currency: str, years_back=1.25):
+def daily(currency: str, years_back=1):
     """
     Models average rises and falls per day using mt5's `D1` timeframe. 
     """
