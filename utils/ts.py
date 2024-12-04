@@ -6,7 +6,7 @@ def make_lags(ts, lags, lead_time=1): # => X
             f'y_lag_{i}': ts.shift(i)
             for i in range(lead_time, lags + lead_time)
         },
-        axis=1).fillna(0.0)
+        axis=1)
 
 
 
@@ -16,7 +16,7 @@ def make_multistep_targets(ts, steps): # => y
     return pd.concat(
         {f'y_step_{i + 1}': ts.shift(-i)
          for i in range(steps)},
-        axis=1).dropna()
+        axis=1)
 
 
 
