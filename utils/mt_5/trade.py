@@ -121,12 +121,14 @@ def buy(symbol, target_profit=10, max_loss=3):
 def short_sell(symbol, target_profit=10, max_loss=3):
     import MetaTrader5 as mt5
     from utils.mt_5.login import login_
-    from utils.mt_5.calculate_price_levels import calculate_sl_tp
+    from utils.mt_5.calculate_price_levels import calculate_sl_tp_short_sell
 
     login_()
 
     symbol += "m"
     symbol_info = mt5.symbol_info(symbol)
+
+    position_id = ""
 
     for position in mt5.positions_get():
         if position.symbol == symbol:
@@ -151,13 +153,12 @@ def short_sell(symbol, target_profit=10, max_loss=3):
 
     lot = 0.01  # Standard lot size
     price = mt5.symbol_info_tick(symbol).bid
-    take_profit, stop_loss = calculate_sl_tp(
+    take_profit, stop_loss = calculate_sl_tp_short_sell(
         symbol=symbol, 
         lot=lot, 
         target_profit=target_profit, 
         max_loss=max_loss, 
-        price=price,
-        order_type=mt5.ORDER_TYPE_SELL
+        price=price
     )
     
     deviation = 20
