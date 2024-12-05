@@ -48,7 +48,7 @@ def sell(symbol):
 
 
 
-def buy(symbol, target_profit=10, max_loss=3):
+def buy(symbol, target_profit=30, max_loss=10):
     import MetaTrader5 as mt5
     from utils.mt_5.login import login_
     from utils.mt_5.calculate_price_levels import calculate_sl_tp
