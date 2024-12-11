@@ -49,9 +49,9 @@ pip install -r requirements.txt
 5. Insert your login credentials in `.env`, shown in the `.env.example` file. 
 6. Run the your preferred notebook.
 
+---
 
 **NOTE: RISK WARNING** Forex trading involves significant risk of loss and is not suitable for all investors. This project is for educational and research purposes only. Do not trade with money you cannot afford to lose.
-
 ---
 
 ## Contribution
