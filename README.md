@@ -56,5 +56,5 @@ Feel free to contribute by opening issues or creating pull requests. Your feedba
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-
+---
 **NOTE: RISK WARNING** Forex trading involves significant risk of loss and is not suitable for all investors. This project is for educational and research purposes only. Do not trade with money you cannot afford to lose.
