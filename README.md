@@ -1,4 +1,4 @@
-# MetaTrader 5 Forex Symbols Analysis
+# Trading Office
 
 This project
 
