@@ -20,7 +20,7 @@ The goal is to mirror an automated office of a short-term (daily, weekly or mont
 
 ```bash
 git clone https://github.com/Stevealila/Trade.git
-cd Analyze-Currency-Pairs
+cd Trade
 ```
 
 2. Create a virtual environment, depending on your operating system:
