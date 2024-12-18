@@ -1,26 +1,24 @@
 def forecast_serials_lstm(currency: str, num_lags: int, minutes_timeframe: int):
-    # .................................Get data for the timeframe..........................................
+
     from utils.mt_5.data import get_currency_pair_data_
     from sklearn.preprocessing import MinMaxScaler
     from utils.ts import make_lags, make_multistep_targets
     import pandas as pd
     import numpy as np
-    from tensorflow.keras.models import Sequential # type:ignore
-    from tensorflow.keras.layers import LSTM, Dense # type:ignore
     from sklearn.model_selection import train_test_split
 
-    # Fetch data
+
+
+    # .................................Get and tranform data..........................................
+
     df = get_currency_pair_data_(currency, timeframe=f"m{minutes_timeframe}", years_back=0.5)
 
-    # Scale the data
     scaler = MinMaxScaler()
     df_scaled = pd.DataFrame(scaler.fit_transform(df), columns=df.columns, index=df.index)
 
-    # Create lagged features and multi-step targets
     X = make_lags(ts=df_scaled['close'], lags=num_lags).fillna(0.0)
     y = make_multistep_targets(ts=df_scaled['close'], steps=num_lags).dropna()
 
-    # Align features and targets
     X = X.iloc[num_lags - 1:].reset_index(drop=True)
     y = y.reset_index(drop=True)
 
@@ -30,19 +28,28 @@ def forecast_serials_lstm(currency: str, num_lags: int, minutes_timeframe: int):
     # Reshape input data for LSTM (samples, timesteps, features)
     X_train = np.expand_dims(X_train.values, axis=2)  # Adding a third dimension for "features"
 
+
+
     # .................................Train..........................................
 
-    from utils.lstm import train_and_save_
+    # from utils.lstm import train_and_save_
 
-    # model = train_and_save_(num_lags, X_train, y_train, save_filepath = f'models/lstm_{currency}.keras')
+    # model = train_and_save_(steps=num_lags, X_train=X_train, y_train=y_train, save_filepath=f"models/{currency}.keras")
+    
+    from tensorflow.keras.models import Sequential # type: ignore
+    from tensorflow.keras.layers import Dense, LSTM # type: ignore
+
     model = Sequential([
         LSTM(50, activation='relu', input_shape=(num_lags, 1)),
         Dense(num_lags)  # Multi-step forecasting
     ])
     model.compile(optimizer='adam', loss='mse')
-    model.fit(X_train, y_train.values, epochs=20, batch_size=32, verbose=0)
+    model.fit(X_train, y_train.values, epochs=30, batch_size=32, verbose=1)
+
+
 
     # .................................Forecast..........................................
+    
     # Prepare last lagged input for prediction
     last_lags = X.iloc[-1].values.reshape(1, num_lags, 1)  # 3D shape for LSTM
     y_fore_scaled = model.predict(last_lags)

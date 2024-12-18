@@ -15,3 +15,5 @@ def train_and_save_(steps, X_train, y_train, save_filepath, n_neurons=50, batch_
     model.compile(loss='mean_squared_error', optimizer=Adam(learning_rate=0.001), metrics=[MeanSquaredError()])
     model.fit(X_train, y_train, batch_size=batch_size, epochs=epochs, verbose=0);
     model.save(save_filepath)
+
+    return model
