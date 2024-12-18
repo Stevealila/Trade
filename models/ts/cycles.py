@@ -1,3 +1,73 @@
+def forecast_serials_lstm(currency: str, num_lags: int, minutes_timeframe: int):
+    # .................................Get data for the timeframe..........................................
+    from utils.mt_5.data import get_currency_pair_data_
+    from sklearn.preprocessing import MinMaxScaler
+    from utils.ts import make_lags, make_multistep_targets
+    import pandas as pd
+    import numpy as np
+    from tensorflow.keras.models import Sequential # type:ignore
+    from tensorflow.keras.layers import LSTM, Dense # type:ignore
+    from sklearn.model_selection import train_test_split
+
+    # Fetch data
+    df = get_currency_pair_data_(currency, timeframe=f"m{minutes_timeframe}", years_back=0.5)
+
+    # Scale the data
+    scaler = MinMaxScaler()
+    df_scaled = pd.DataFrame(scaler.fit_transform(df), columns=df.columns, index=df.index)
+
+    # Create lagged features and multi-step targets
+    X = make_lags(ts=df_scaled['close'], lags=num_lags).fillna(0.0)
+    y = make_multistep_targets(ts=df_scaled['close'], steps=num_lags).dropna()
+
+    # Align features and targets
+    X = X.iloc[num_lags - 1:].reset_index(drop=True)
+    y = y.reset_index(drop=True)
+
+    # Split into train/test sets
+    X_train, _, y_train, _ = train_test_split(X, y, test_size=0.2, shuffle=False)
+
+    # Reshape input data for LSTM (samples, timesteps, features)
+    X_train = np.expand_dims(X_train.values, axis=2)  # Adding a third dimension for "features"
+
+    # .................................Train..........................................
+
+    from utils.lstm import train_and_save_
+
+    # model = train_and_save_(num_lags, X_train, y_train, save_filepath = f'models/lstm_{currency}.keras')
+    model = Sequential([
+        LSTM(50, activation='relu', input_shape=(num_lags, 1)),
+        Dense(num_lags)  # Multi-step forecasting
+    ])
+    model.compile(optimizer='adam', loss='mse')
+    model.fit(X_train, y_train.values, epochs=20, batch_size=32, verbose=0)
+
+    # .................................Forecast..........................................
+    # Prepare last lagged input for prediction
+    last_lags = X.iloc[-1].values.reshape(1, num_lags, 1)  # 3D shape for LSTM
+    y_fore_scaled = model.predict(last_lags)
+
+    # Inverse transform the predictions
+    y_fore = scaler.inverse_transform(y_fore_scaled).flatten()
+
+    # Create a DataFrame for the forecast
+    forecast_df = pd.DataFrame({
+        "time": pd.date_range(
+            df.index[-1] + pd.Timedelta(minutes=minutes_timeframe),
+            periods=num_lags,
+            freq=f"{minutes_timeframe}min"
+        ),
+        "predicted_close": y_fore
+    })
+    forecast_df.index = forecast_df['time']
+    forecast_df.drop('time', axis=1, inplace=True)
+
+    return df, forecast_df
+
+
+
+
+
 def forecast_serials(currency: str, num_lags: int, minutes_timeframe: int):
 
     # .................................Get data for the timeframe..........................................
